@@ -1,4 +1,4 @@
-pytest-cov==2.11.1            ; python_version == '2.7'
+pytest-cov==2.11.1
 
 # python2
 pylint==1.9.5                 ; python_version == '2.7'
