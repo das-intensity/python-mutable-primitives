@@ -1,6 +1,7 @@
 # Python Mutable Primitives
 
 [![Build Status](https://travis-ci.com/das-intensity/python-mutable-primitives.svg?branch=master)](https://travis-ci.com/das-intensity/python-mutable-primitives)
+[![Coverage Status](https://coveralls.io/repos/github/das-intensity/python-mutable-primitives/badge.svg?branch=master)](https://coveralls.io/github/das-intensity/python-mutable-primitives?branch=master)
 
 While easy to create, it is crazy that python doesn't provide mutable primitives by default (AFAIK).
 

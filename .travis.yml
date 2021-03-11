@@ -11,6 +11,7 @@ python:
 script:
   - pylint mutable_primitives
   - pytest
+  - coveralls
 
 deploy:
   provider: pypi
