@@ -11,7 +11,6 @@ EQUALITY_FUNCTIONS = [
 class Mutable:
     def __init__(self, val):
         self.val = val
-        super().__init__()
 
     def get(self):
         return self.val
