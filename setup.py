@@ -1,9 +1,9 @@
-import pathlib
+import os
 from setuptools import setup, find_packages
 
-HERE = pathlib.Path(__file__).parent
+HERE = os.path.dirname(os.path.realpath(__file__))
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 PACKAGE_NAME = 'mutable_primitives'
 AUTHOR = 'Dr. Nick'
 AUTHOR_EMAIL = 'das-intensity@users.noreply.github.com'
@@ -11,7 +11,7 @@ URL = 'https://github.com/das-intensity/mutable-primitives'
 
 LICENSE = 'MIT Licence'
 DESCRIPTION = 'Mutable classes of python primitives'
-LONG_DESCRIPTION = (HERE / "README.md").read_text()
+LONG_DESCRIPTION = open(os.path.join(HERE, "README.md")).read()
 LONG_DESC_TYPE = "text/markdown"
 
 INSTALL_REQUIRES = [
