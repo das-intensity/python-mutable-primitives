@@ -1,1 +1,8 @@
 __pycache__
+*.pyc
+
+# setup.py artifacts
+.eggs/
+build/
+dist/
+mutable_primitives.egg-info/

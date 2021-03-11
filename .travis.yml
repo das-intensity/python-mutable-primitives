@@ -8,7 +8,9 @@ python:
   - "3.8"
   - "3.9"
 
-script: pytest
+script:
+  - pylint mutable_primitives
+  - pytest
 
 deploy:
   provider: pypi

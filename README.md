@@ -1,5 +1,7 @@
 # Python Mutable Primitives
 
+[![Build Status](https://travis-ci.com/das-intensity/python-mutable-primitives.svg?branch=master)](https://travis-ci.com/das-intensity/python-mutable-primitives)
+
 While easy to create, it is crazy that python doesn't provide mutable primitives by default (AFAIK).
 
 This package provides some simple python primitive types in a mutable shell:
