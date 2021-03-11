@@ -1,0 +1,19 @@
+language: python
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
+
+script: pytest
+
+deploy:
+  provider: pypi
+  username: "__token__"
+  password:
+    secure: "NAfkhA8tOM8ZQdEVbL8psVxz3fLKrnlNICtl6DDwodmrYj8+6RMjNlWLU1G/K140JOgGS1HQkHJjxxOvSJzEf3k9KMkJF9CViwT7QHMfEYE3kTvf1M/uMZvKKbfHOlNT5qHl1RkJ5yb9i4wwPj+3/feVQ6o+VyEWe1f+9ldTNd4eMaqkCigIEfb9JY4K+T2UaH8EzQBDU3a7wPOaYD+OPTfkU3053LBFrqsPJ2Isud+xDkjWtTWItaDgM8qi1n+7eFeksHW9cBcThERbAiH7VoknlS3afjbPT4ZNpF+SanSwrcC4qgbotrrza5PYFxFtSHsgLpyTQ1zAqRpwC4rZ7dZPODwh4UC226cZ/+uQIDIhKgM0a0WKoNIQGhpixx/V+0WdF+BVEftm99dZIujkzwB5+n4Td67GajrpCR/L9VqwtVy/uGRq+TsHdHtRQdqNgdrSmh029e08arQEloK1js1igjQ3WKBeRmbzttNMlurPYk41wXaN5RF4fEiv+NPcKoaQsvS1rXeMloBaW9c3xItRmeH/uqOq5fAYJIfiS/AGjCdl6gTsr53wMDH12JaXuFFtlLR2mU/HnMiZ5k8ecKe6zLJoyxXBgVO+4wWIczAe5IVCSqZdakY1FEhQwqq3eILnzBHD4MTaoauG8PlY/dIaQvLiQ1PXZo4MV+Vs58Q="
+  on:
+    tags: true
