@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 HERE = os.path.dirname(os.path.realpath(__file__))
 
-VERSION = '0.0.2'
+VERSION = '0.0.3'
 PACKAGE_NAME = 'mutable_primitives'
 AUTHOR = 'Dr. Nick'
 AUTHOR_EMAIL = 'das-intensity@users.noreply.github.com'

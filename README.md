@@ -65,9 +65,8 @@ A: You can't subclass `bool`, and subclassing the other primitives brings comple
 
 In rough order of preference:
 
-- Proper README.md
-- LICENCE
-- integrate with pypi
+- Better README.md
+- Ensure correct type used with `.set()`, e.g. `x = Int(5); x.set('bad')` should error
 - Tests for `Bool` class
 - Tests for `Int` class
 - Tests for `Float` class
