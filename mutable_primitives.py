@@ -1,4 +1,5 @@
-from types import FunctionType
+''' Mutable Primitives '''
+#from types import FunctionType
 
 
 EQUALITY_FUNCTIONS = [
@@ -8,14 +9,17 @@ EQUALITY_FUNCTIONS = [
 
 
 
-class Mutable:
+class Mutable(object): # pylint: disable=useless-object-inheritance
+    ''' Base class for mutable primitives '''
     def __init__(self, val):
         self.val = val
 
     def get(self):
+        ''' get raw value of mutable '''
         return self.val
 
     def set(self, val):
+        ''' set raw value of mutable '''
         self.val = val
 
     def __eq__(self, other):
@@ -33,17 +37,16 @@ class Mutable:
 
 
 class Bool(Mutable):
-    pass
+    ''' Mutable version of float '''
 
 
 
 class MutableNumeric(Mutable):
-    pass
+    ''' Base class for mutable numeric primitives '''
 
 
 class Int(MutableNumeric):
-    pass
+    ''' Mutable version of int '''
 
 class Float(MutableNumeric):
-    pass
-
+    ''' Mutable version of float '''
