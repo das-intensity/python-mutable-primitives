@@ -1,5 +1,6 @@
 ''' Mutable Primitives '''
-#from types import FunctionType
+from types import FunctionType
+import sys
 
 
 EQUALITY_FUNCTIONS = [
@@ -7,6 +8,26 @@ EQUALITY_FUNCTIONS = [
         '__ne__',
         ]
 
+MATH_FUNCTIONS = [
+        ('add', '+'),
+        ('sub', '-'),
+        ('mul', '*'),
+        # Division is handled differently in python2 and python3
+        ]
+if sys.version_info[0] < 3:
+    MATH_FUNCTIONS.append(('div', '/'))
+else:
+    MATH_FUNCTIONS.extend([
+        ('floordiv', '//'),
+        ('truediv', '/'),
+        ])
+
+
+FORMATS = {
+        '': 'return self.val {} other',
+        'r': 'return other {} self.val',
+        'i': 'self.val {}= other',
+        }
 
 
 class Mutable(object): # pylint: disable=useless-object-inheritance
@@ -35,14 +56,20 @@ class Mutable(object): # pylint: disable=useless-object-inheritance
         return '<{}>'.format(self)
 
 
-
 class Bool(Mutable):
     ''' Mutable version of float '''
 
 
-
 class MutableNumeric(Mutable):
     ''' Base class for mutable numeric primitives '''
+
+    for fmt, basecode in FORMATS.items():
+        for (basename, op) in MATH_FUNCTIONS:
+            name = '__{}{}__'.format(fmt, basename)
+            code = 'def {}(self, other): {}'.format(name, basecode.format(op))
+            code = compile(code, "<string>", "exec")
+            locals()[name] = FunctionType(code.co_consts[0], globals(), name)
+            del code, name, op
 
 
 class Int(MutableNumeric):
