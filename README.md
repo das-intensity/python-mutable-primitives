@@ -54,8 +54,8 @@ A: Having a library just makes it more uniform and clear what's happening.
 Q: There are 4 competing libraries for this functionality, why add another?  
 A: There are now 5 competing libraries.
 
-Q: Why use obfuscated/unsafe `compile`/`FunctionType` when you could just write the functions?  
-A: I'm lazy, feel free to PR it.
+Q: Why write out so many repetitive functions when you could just inherit
+A: So that test coverage can be sure that it's run. Also the code is generated and committed, so it's not extra dev effort.
 
 Q: Why not subclass `int`/`float`/etc?  
 A: You can't subclass `bool`, and subclassing the other primitives brings complexity.
@@ -67,9 +67,6 @@ In rough order of preference:
 
 - Better README.md
 - Ensure correct type used with `.set()`, e.g. `x = Int(5); x.set('bad')` should error
-- Tests for `Bool` class
-- Tests for `Int` class
-- Tests for `Float` class
 - Implement `Str` class
 - Tests for `Str` class
 - Add thread-safe mutables classes
