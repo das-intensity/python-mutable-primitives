@@ -7,3 +7,4 @@ max-line-length=120
 disable=
 	bad-continuation,    # pylint complains about 8-space continuation of lists
 	bad-option-value,    # to support pylint on python2/python3
+	duplicate-code,      # we intentionally generate the same code for the classes
