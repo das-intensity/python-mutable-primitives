@@ -26,7 +26,7 @@ else:
 FORMATS = {
         '': 'return self.val {} other',
         'r': 'return other {} self.val',
-        'i': 'self.val {}= other',
+        'i': 'self.val {}= other; return self',
         }
 
 
@@ -53,7 +53,7 @@ class Mutable(object): # pylint: disable=useless-object-inheritance
         return '{}({})'.format(self.__class__.__name__, self.val)
 
     def __repr__(self):
-        return '<{}>'.format(self)
+        return '{}({})'.format(self.__class__.__name__, self.val)
 
 
 class Bool(Mutable):
