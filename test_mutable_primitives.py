@@ -44,6 +44,7 @@ class TestBasic(unittest.TestCase):
     def test_stringify(self):
         obj = self.typ(DEFAULTS[self.name][0])
         assert str(obj) == '{}({})'.format(obj.__class__.__name__, DEFAULTS[self.name][0])
+        assert repr(obj) == '{}({})'.format(obj.__class__.__name__, DEFAULTS[self.name][0])
 
 class TestNumerics(unittest.TestCase):
     typ = None
@@ -75,6 +76,9 @@ def {}(self):
 
     assert mut_a {op} mut_b == prim_a {op} prim_b
     assert mut_b {op} mut_a == prim_b {op} prim_a
+
+    assert mut_a {op} prim_b == prim_a {op} prim_b
+    assert prim_b {op} mut_a == prim_b {op} prim_a
 
     mut_a {op}= mut_b
     assert mut_a.get() == prim_a {op} prim_b
