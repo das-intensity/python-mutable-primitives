@@ -1,6 +1,6 @@
 # Python Mutable Primitives
 
-[![Build Status](https://travis-ci.com/das-intensity/python-mutable-primitives.svg?branch=master)](https://travis-ci.com/das-intensity/python-mutable-primitives)
+[![Test Status](https://github.com/das-intensity/python-mutable-primitives/actions/workflows/test.yml/badge.svg)](https://github.com/das-intensity/python-mutable-primitives/actions)
 [![Coverage Status](https://coveralls.io/repos/github/das-intensity/python-mutable-primitives/badge.svg?branch=master)](https://coveralls.io/github/das-intensity/python-mutable-primitives?branch=master)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mutable-primitives)
 ![PyPI - License](https://img.shields.io/pypi/l/mutable-primitives)
