@@ -9,9 +9,10 @@ from mutable_primitives import (
         )
 
 DEFAULTS = {
-        "int": [5, 7],
+        # Intentionally put zero-values last to ensure others are used for equality comparisons
+        "int": [5, 7, 0],
         "bool": [True, False],
-        "float": [3.431, 8.543],
+        "float": [3.431, 8.543, 0.0],
         }
 
 
@@ -32,6 +33,7 @@ class TestBasic(unittest.TestCase):
         assert DEFAULTS[self.name][0] == self.typ(DEFAULTS[self.name][0])
         assert DEFAULTS[self.name][0] != self.typ(DEFAULTS[self.name][1])
 
+    def test_truthiness(self):
         # check boolean evaluation
         for val in DEFAULTS[self.name]:
             if val:
