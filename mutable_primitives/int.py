@@ -38,6 +38,18 @@ class Int(Mutable):
     def __repr__(self):
         return '{}({})'.format(self.__class__.__name__, self.val)
 
+    def __bool__(self):
+        ''' boolean test for python3 '''
+        if self.val:
+            return True
+        return False
+
+    def __nonzero__(self):
+        ''' boolean test for python2 '''
+        if self.val:
+            return True
+        return False
+
     def __add__(self, other):
         return self.val + other
 
