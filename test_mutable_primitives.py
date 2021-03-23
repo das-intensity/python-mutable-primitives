@@ -32,6 +32,13 @@ class TestBasic(unittest.TestCase):
         assert DEFAULTS[self.name][0] == self.typ(DEFAULTS[self.name][0])
         assert DEFAULTS[self.name][0] != self.typ(DEFAULTS[self.name][1])
 
+        # check boolean evaluation
+        for val in DEFAULTS[self.name]:
+            if val:
+                assert self.typ(val), "{} evaluates True, but {} evaluates False".format(val, self.typ(val))
+            else:
+                assert not self.typ(val), "{} evaluates False, but {} evaluates True".format(val, self.typ(val))
+
     def test_set_get(self):
         obj = self.typ(DEFAULTS[self.name][0])
         assert obj.val == DEFAULTS[self.name][0]

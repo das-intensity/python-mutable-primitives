@@ -94,6 +94,20 @@ for prim, info in mut_types.items():
         "return '{}({})'.format(self.__class__.__name__, self.val)",
         ]))
 
+    cls_code.extend(cls_func("def __bool__(self):", [
+        "''' boolean test for python3 '''",
+        "if self.val:",
+        "    return True",
+        "return False",
+        ]))
+
+    cls_code.extend(cls_func("def __nonzero__(self):", [
+        "''' boolean test for python2 '''",
+        "if self.val:",
+        "    return True",
+        "return False",
+        ]))
+
     if info['numeric']:
         for mtype, basecode in MATH_CODE.items():
             for basename, op in MATH_FUNCTIONS:
