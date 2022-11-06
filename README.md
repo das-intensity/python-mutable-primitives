@@ -40,7 +40,7 @@ assert x == 5
 assert 5 == x
 ```
 
-TODO some invalid/bad/dangerous use cases1
+TODO some invalid/bad/dangerous use cases
 
 
 ## Caveats, Reasoning, and FAQ
@@ -54,7 +54,7 @@ A: Having a library just makes it more uniform and clear what's happening.
 Q: There are 4 competing libraries for this functionality, why add another?  
 A: There are now 5 competing libraries.
 
-Q: Why write out so many repetitive functions when you could just inherit
+Q: Why write out so many repetitive functions when you could just inherit?  
 A: So that test coverage can be sure that it's run. Also the code is generated and committed, so it's not extra dev effort.
 
 Q: Why not subclass `int`/`float`/etc?  
@@ -67,6 +67,4 @@ In rough order of preference:
 
 - Better README.md
 - Ensure correct type used with `.set()`, e.g. `x = Int(5); x.set('bad')` should error
-- Implement `Str` class
-- Tests for `Str` class
 - Add thread-safe mutables classes
