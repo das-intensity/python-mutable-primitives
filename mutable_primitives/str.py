@@ -1,19 +1,20 @@
 ''' Str - A mutable str class '''
 from mutable_primitives.base import Mutable
 
+
 class Str(Mutable):
     ''' Str - A mutable str class '''
     base = str
 
-    def __init__(self,val):
-        super(Str, self).__init__(val, self.base) #pylint: disable=super-with-arguments
+    def __init__(self, val):
+        super(Str, self).__init__(val, self.base)  # pylint: disable=super-with-arguments
         self.val = val
 
     def get(self):
         ''' get raw (primitive value '''
         return self.val
 
-    def set(self,val):
+    def set(self, val):
         ''' set raw (primitive) value '''
         assert isinstance(val, self.base)
         self.val = val
