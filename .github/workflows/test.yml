@@ -38,7 +38,10 @@ jobs:
         pytest
 
     - name: Code coverage with coveralls
-      # python2.7 has problems using GITHUB_TOKEN, so use older COVERALLS_REPO_TOKEN method
+      # some coveralls versions have issues using GITHUB_TOKEN, so use older COVERALLS_REPO_TOKEN too
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: coveralls
+      # Coveralls is a mess for python 2.7/3.4, so just skip
+      if: contains(fromJson('[2.7, 3.4]'), matrix.python-version) != true
