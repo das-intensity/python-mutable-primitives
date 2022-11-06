@@ -1,3 +1,4 @@
+''' Str - A mutable str class '''
 from mutable_primitives.base import Mutable
 
 class Str(Mutable):
@@ -5,7 +6,7 @@ class Str(Mutable):
     base = str
 
     def __init__(self,val):
-        super(Str, self).__init__(val,self.base)
+        super(Str, self).__init__(val, self.base) #pylint: disable=super-with-arguments
         self.val = val
 
     def get(self):
