@@ -28,6 +28,8 @@ mut_types = {
         'float': {
             'numeric': True,
             },
+        # str intentionally not added here as it, as it is between simple and
+        #   numeric types
         }
 
 
