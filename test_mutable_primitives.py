@@ -6,6 +6,7 @@ from mutable_primitives import (
         Int,
         Float,
         Bool,
+        Str
         )
 
 DEFAULTS = {
@@ -13,6 +14,7 @@ DEFAULTS = {
         "int": [5, 7, 0],
         "bool": [True, False],
         "float": [3.431, 8.543, 0.0],
+        "str": ["a","z","asdf"]
         }
 
 
@@ -98,6 +100,7 @@ def {}(self):
 
 types = [
         ("bool", Bool),
+        ("str", Str),
         ]
 
 num_types = [
