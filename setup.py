@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 HERE = os.path.dirname(os.path.realpath(__file__))
 
-VERSION = '0.0.6'
+VERSION = '0.0.7'
 PACKAGE_NAME = 'mutable_primitives'
 AUTHOR = 'Dr. Nick'
 AUTHOR_EMAIL = 'das-intensity@users.noreply.github.com'
@@ -38,6 +38,7 @@ setup(name=PACKAGE_NAME,
           'Programming Language :: Python :: 3.7',
           'Programming Language :: Python :: 3.8',
           'Programming Language :: Python :: 3.9',
+          'Programming Language :: Python :: 3.10',
       ],
       packages=find_packages(),
       setup_requires=['pytest-runner'],
