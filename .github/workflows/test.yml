@@ -8,13 +8,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [2.7, 3.6, 3.7, 3.8, 3.9]
+        python-version: ['2.7', '3.7', '3.8', '3.9', '3.10']
         os: [ubuntu-latest]
         include:
-          - python-version: 3.4
+          - python-version: '3.4'
             os: ubuntu-18.04
-          - python-version: 3.5
+          - python-version: '3.5'
             os: ubuntu-18.04
+          - python-version: '3.6'
+            os: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v2
@@ -42,6 +44,6 @@ jobs:
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: coveralls --service=github
-      # Coveralls is a mess for python 2.7/3.4, so just skip
-      if: contains(fromJson('[2.7, 3.4]'), matrix.python-version) != true
+      run: coveralls
+      # Only send to coveralls on latest python
+      if: ${{ matrix.python-version == '3.10' }}
